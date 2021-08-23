@@ -96,7 +96,13 @@ const Repository: React.FC = () => {
 
       <Issues>
         {issues.map((issue) => (
-          <a key={issue.id} target="_blank" href={issue.html_url}>
+          // eslint-disable-next-line react/jsx-no-target-blank
+          <a
+            key={issue.id}
+            rel="noopener noreferrer"
+            target="_blank"
+            href={issue.html_url}
+          >
             <div>
               <strong>{issue.title}</strong>
               <p>{issue.user.login}</p>
